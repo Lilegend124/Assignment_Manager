@@ -1,0 +1,39 @@
+Tutorials for Google API: 
+https://www.section.io/engineering-education/django-google-oauth/
+https://dev.to/gajesh/the-complete-django-allauth-guide-la3#:~:text=By%20default%2C%20allauth%20redirects%20login,8000%20or%20any%20localhost%20homepage.&text=When%20you%20are%20done%2C%20your,similar%20to%20the%20below%20settings.
+https://www.youtube.com/watch?v=NG48CLLsb1A&ab_channel=JustDjango
+
+Jiafu's google account:
+Client ID: 1065821786650-stq98v4440pfks7o0m6l3mtethuip61l.apps.googleusercontent.com
+Client Secret: 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
+
+Will's google account:
+Client ID: 378243855178-5800mt78ci0rdm99bifo432m3hc4cbg2.apps.googleusercontent.com
+Client Secret: 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
+
+Webpage:
+Google Login page: http://127.0.0.1:8000/accounts/google/login/
+Google sign out page: http://127.0.0.1:8000/accounts/google/login/callback/
+
+superuser (might only work locally, so you can do "py manage.py createsuperuser" to set up your own account):
+username: cs3240
+email: jl8jp@virginia.edu
+password: password
+
+Will's admin:
+username: admin
+email: wmb8yt@virginia.edu
+password: password1234
+
+Google account:
+name: Group-A-02 CS3240
+email: CS3240A02@gmail.com
+password: UVACS3240A02
+
+
+
+# Ignore the parts below
+Activate virtual environment:
+.\env\Scripts\activate
+
+deactivate

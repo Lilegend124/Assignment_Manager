@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<title>To Do Detail</title>
+	<meta name="author" content="Your Name">
+	<meta name="description" content="Example description">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+	<link rel="icon" type="image/x-icon" href=""/>
+</head>
+
+<body class="bg-light" style="color: #073b4c !important">
+    
+{% include "nav.html" %}
+    
+    <br><br><br>
+    
+<main>
+  
+  <div>
+    Welcome {{ user.username }}!
+      <div class="container col-xxl-8 px-4 py-5">
+        <div> Title: {{ object.title }} </div>
+        <div> Content: {{ object.content }} </div>
+        <div> Due Date: {{ object.date }} </div>
+      </div>
+  </div>
+    <a class="btn btn-outline-secondary" href="/day/" style="align-self: center; background-color: #4a565a; border: 0px; color: white; box-shadow: 0 0 10px gray">Back</a>
+    
+</main>
+    
+<footer class="footer" style="bottom:0; position: fixed; width:100%">
+  <div class="container-fluid">
+    <div class="row text-center">
+      <div class="col-lg-12">UVA CS 3240 Group A-02</div>
+    </div> 
+  </div>
+</footer>
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</body>
+
+</html>

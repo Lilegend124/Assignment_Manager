@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<title>To Do Create</title>
+	<meta name="author" content="Your Name">
+	<meta name="description" content="Example description">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+	<link rel="icon" type="image/x-icon" href=""/>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+  <!-- XDSoft DateTimePicker -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css" integrity="sha256-DOS9W6NR+NFe1fUhEE0PGKY/fubbUCnOfTje2JMDw3Y=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js" integrity="sha256-FEqEelWI3WouFOo2VWP/uJfs1y8KJ++FLh2Lbqc8SJk=" crossorigin="anonymous"></script>
+
+</head>
+
+<body class="bg-light" style="color: #073b4c !important">
+    
+{% include "nav.html" %}
+    
+    <br><br><br>
+    
+<main>
+  
+  <div>
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            Title: <br>
+            {{ form.title }} <br>
+            Content: <br>
+            {{ form.content }} <br>
+            Date: <br>
+            <input id="datetimepicker" type="text" autocomplete="off" {{ form.date }} <br>
+        </fieldset>
+        <div class="form-group">
+            <br>
+            <button class="btn btn-secondary" type="submit" style="align-self: center; background-color: #dd6e42; border: 0px; box-shadow: 0 0 10px gray">Add To-Do Item</button>
+            <a class="btn btn-outline-secondary" href="/day/" style="align-self: center; background-color: #5e6a6e; border: 0px; color: white; box-shadow: 0 0 10px gray">Cancel</a>
+        </div>
+    </form>
+  </div>
+    
+</main>
+    
+<footer class="footer" style="bottom:0; position: fixed; width:100%">
+  <div class="container-fluid">
+    <div class="row text-center">
+      <div class="col-lg-12">UVA CS 3240 Group A-02</div>
+    </div> 
+  </div>
+</footer>
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+  <script>
+    $(function () {
+      $("#datetimepicker").datetimepicker({
+        format: 'm/d/Y H:i',
+      });
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<title>To Do Confirm Delete</title>
+	<meta name="author" content="Your Name">
+	<meta name="description" content="Example description">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+	<link rel="icon" type="image/x-icon" href=""/>
+</head>
+
+<body class="bg-light" style="color: #073b4c !important">
+    
+{% include "nav.html" %}
+    
+    <br><br><br>
+    
+<main>
+  
+  <div>
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend>Delete Document</legend>
+            <p> Are you sure you want to delete the following Document? </p>
+            <p> Name: {{object.name}} </p>
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-danger" type="submit" style="align-self: center; background-color: #e8dab2; border: 0px; color: white; box-shadow: 0 0 10px gray">Confirm</button>
+            <a class="btn btn-outline-secondary" href="{% url 'classes'%}" style="align-self: center; background-color: #c0d6df; border: 0px; color: white; box-shadow: 0 0 10px gray">Cancel</a>
+        </div>
+    </form>
+  </div>
+    
+</main>
+    
+    
+    
+    
+<footer class="footer" style="bottom:0; position: fixed; width:100%">
+  <div class="container-fluid">
+    <div class="row text-center">
+      <div class="col-lg-12">UVA CS 3240 Group A-02</div>
+    </div> 
+  </div>
+</footer>
+    
+    
+    
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,4 @@
+Admin credentials:
+    username: super
+    password: 123456
+

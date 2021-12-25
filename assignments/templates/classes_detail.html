@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<title>Classes Detail</title>
+	<meta name="author" content="Your Name">
+	<meta name="description" content="Example description">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+	<link rel="icon" type="image/x-icon" href=""/>
+</head>
+
+<body class="bg-light" style="color: #073b4c !important">
+
+    {% include "nav.html" %}
+    
+    <br><br><br>
+
+    <main>
+        <div>
+        Welcome {{ user.username }}!
+            <div class="container col-xxl-8 px-4 py-5">
+            <div> Title: {{ class_item.class_title }} </div>
+            <div> Meeting Days: {{ class_item.meeting_days }} </div>
+            <div> Start: {{ class_item.meeting_time_start }} </div>
+            <div> End: {{ class_item.meeting_time_end }} </div>
+            <ul class="list-group">
+                {% for item in documents %}
+                      <li class="list-group-item">
+                          <a href="{{item.doc.url}}" style="padding-right:150px"> {{item.name}} </a>
+                        {% if item.author == request.user %}
+                          <a class="btn btn-secondary btn-lg" href="{% url 'document_delete' item.id %}" style="align-self: right; background-color: #eb3a2e; border: 0px; box-shadow: 0 0 5px gray">Delete</a>
+                        {% endif %}
+                      </li>
+                {% endfor %}
+            </ul>
+            <a class="btn btn-secondary btn-lg" href="{% url 'upload_file' class_item.id %}"style="align-self: left; background-color: #dd6e42; border: 0px">Add Document</a>
+        </div>
+  </div>
+    <a class="btn btn-outline-secondary" href="/classes/" style="align-self: center; background-color: #4b5558; border: 0px; color: white">Back</a>
+    </main>
+
+    <footer class="footer" style="bottom:0; position: fixed; width:100%">
+      <div class="container-fluid">
+        <div class="row text-center">
+          <div class="col-lg-12">UVA CS 3240 Group A-02</div>
+        </div>
+      </div>
+    </footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</body>
+
+</html>
